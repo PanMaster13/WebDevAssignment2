@@ -1,0 +1,8 @@
+#product-box{
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.product-item img{
+	width: 20%;
+}

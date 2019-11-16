@@ -1,3 +1,7 @@
+.logo img{
+	width: 20%;
+}
+
 #product-box{
 	display: grid;
 	grid-template-columns: auto auto;

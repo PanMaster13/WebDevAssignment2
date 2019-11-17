@@ -5,9 +5,12 @@
 		$email = $_POST["email"];
 		$password = $_POST["password"];
 		$confirm_password = $_POST["confirm_password"];
+		$counter = 0;
 		
 		if ((empty($fname)) || (empty($lname)) || (empty($email)) || (empty($password)) || (empty($confirm_password))){
-			echo "double gae";
+			$feedback = "<p style='color:red'>It seems there are missing fields in the registration form.<br/> Please ensure that all the fields are filled in.</p>";
+		} else if($confirm_password != $password){
+			$feedback = "<p style='color:red'>Your password does not seem to match your confirmation password.<br/> Please retype the password again slowly and ensure that CAPSLOCK is not active.</p>";
 		} else {
 			// Initialise database variables
 			$host = "localhost";
@@ -31,9 +34,17 @@
 			$numRows = mysqli_num_rows($validation_result);
 			
 			if ($numRows == 0){
+				// Hashing and Salting
+				$hased_password = password_hash($password, PASSWORD_DEFAULT);
+				$insert_query = "INSERT INTO user (fname, lname, email, password, change_pwd_counter) VALUES (?, ?, ?, ?, ?)";
+				$insert_prep = mysqli_prepare($conn, $insert_query);
+				mysqli_stmt_bind_param($insert_prep, 'ssssi', $fname, $lname, $email, $hased_password, $counter);
+				mysqli_stmt_execute($insert_prep);
+				$insert_result = mysqli_stmt_get_result($insert_prep);
 				
+				$feedback = "<p style='color:green'>Your account has been registered successfully.<br/> You can log in to that account or create another account.</p>";
 			} else {
-				echo "u R a dupe";
+				$feedback = "<p style='color:red'>It seems that the email you are trying to register has already belonged to an existing account.<br/> Please try with another account.</p>";
 			}
 			// Free query Result
 			mysqli_free_result($validation_result);
@@ -41,6 +52,32 @@
 			mysqli_close($conn);
 		}
 	} else {
-		echo "gae";
+		$feedback = "<p style='color:red'>Please fill in the registration form.</p>";
 	}
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Confirmation Page</title>
+	<link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+	<nav>
+		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
+	</nav>
+	<header>
+		<h1>Account Confirmation Page</h1>
+	</header>
+	<article>
+		<?php echo $feedback; ?>
+		<p><a href="register.php">Register another user</a></p>
+		<p><a href="login.php">Login</a></p>
+		<p><a href="index.php">Back to home page</a></p>
+	</article>
+	<footer>
+		<p><a href="contact.php">Contact Us</a></p>
+	</footer>
+</body>
+</html>

@@ -1,3 +1,13 @@
+<?php
+	session_start();
+	
+	if (!isset($_SESSION['email'])){
+		$userLoggedIn = false;
+	} else {
+		$userLoggedIn = true;
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +18,21 @@
 <body>
 	<nav>
 		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
-		<p><a href="register.php">Register</a></p>
-		<p><a href="login.php">Login</a></p>
+		
+		<?php 
+			if (!$userLoggedIn){
+				echo "
+					<p><a href='register.php'>Register</a></p>
+					<p><a href='login.php'>Login</a></p>";
+					$price_multiplier = 1;
+			} else {
+				echo "
+					<p>Welcome back, " . $_SESSION['fname'] . " " . $_SESSION['lname'] . "!</p>
+					<p><a href='logout_process.php'>Logout</a></p>
+					<p><a href='update.php'>Change Account Details</a></p>";
+					$price_multiplier = 0.5;
+			}
+		?>
 	</nav>
 	<header>
 		<h1>Welcome to PC-Way</h1>
@@ -21,44 +44,57 @@
 			<div class="product-item">
 				<img src="images/keyboard-1.png" alt="Image of Cougar Attack X3 Keyboard" />
 				<p>Name: Cougar Attack X3 Gaming Keyboard</p>
+				<?php echo "<p>Price: RM " . number_format((float)(45.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/keyboard-2.png" alt="Image of Logitech G410 Atlas Keyboard" />
 				<p>Name: Logitech G410 Atlas Gaming Keyboard</p>
+				<?php echo "<p>Price: RM " . number_format((float)(48.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/mouse-1.png" alt="Image of Logitech G502 HERO Mouse" />
 				<p>Name: Logitech G502 HERO Gaming Mouse</p>
+				<?php echo "<p>Price: RM " . number_format((float)(25.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/mouse-2.png" alt="Image of Razer Lancehead Mouse" />
 				<p>Name: Razer Lancehead Gaming Mouse</p>
+				<?php echo "<p>Price: RM " . number_format((float)(24.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/mouse-pad-1.png" alt="Image of Qck Large Mousepad" />
 				<p>Name: Qck Large Gaming Mousepad</p>
+				<?php echo "<p>Price: RM " . number_format((float)(15.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/mouse-pad-2.png" alt="Image of Homemade Mousepad" />
 				<p>Name: Custom Designed Homemade Mousepad</p>
+				<?php echo "<p>Price: RM " . number_format((float)(14.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/laptop-1.png" alt="Image of a Classy Laptop" />
 				<p>Name: The one & only Classly Laptop</p>
+				<?php echo "<p>Price: RM " . number_format((float)(2500.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/laptop-2.png" alt="Image of MacBook Air+ Laptop" />
 				<p>Name: The signature MacBook Air+ Laptop</p>
+				<?php echo "<p>Price: RM " . number_format((float)(3000.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/card-1.png" alt="Image of Graphics card 1050 ti" />
 				<p>Name: NVIDIA GeForce 1050 Ti Graphics Card</p>
+				<?php echo "<p>Price: RM " . number_format((float)(1600.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 			<div class="product-item">
 				<img src="images/card-2.png" alt="Image of Graphics card 1070" />
 				<p>Name: NVIDIA Gtx 1070 Graphics Card</p>
+				<?php echo "<p>Price: RM " . number_format((float)(1900.00 * $price_multiplier), 2, '.', '') . "</p>";?>
 			</div>
 		</div>
 	</article>
+	<footer>
+		<p><a href="contact.php">Contact Us</a></p>
+	</footer>
 </body>
 </html>

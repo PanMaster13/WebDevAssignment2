@@ -8,14 +8,22 @@
 <body>
 	<nav>
 		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
-		<p><a href="register.php">Register</a></p>
-		<p><a href="login.php">Login</a></p>
 	</nav>
 	<header>
-		<h1>Login</h1>
+		<h1>Account Login Form</h1>
 	</header>
 	<article>
-		
+		<form action="login_process.php" method="post">
+			<p>Login Email: <input type="text" name="login_email" /></p>
+			<p>Password: <input type="password" name="password" /></p>
+			<p><input type="reset" value="Reset" />
+			<p><input type="submit" value="Log In" name="login_btn" /></p>
+		</form>
 	</article>
+	<p><a href="register.php">Register another user</a></p>
+	<p><a href="index.php">Back to home page</a></p>
+	<footer>
+		<p><a href="contact.php">Contact Us</a></p>
+	</footer>
 </body>
 </html>

@@ -1,15 +1,49 @@
+<?php
+	session_start();
+	
+	if (!isset($_SESSION['email'])){
+		$userLoggedIn = false;
+	} else {
+		$userLoggedIn = true;
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<title>Contact Us</title>
+	<title>Contact Us Page</title>
+	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-	<h1>Contact Us</h1>
-	<p>Student Name: Jason Ang Chia Wuen</p>
-	<p>Student ID: 100087252</p>
-	<p>Email Address: <a href="mailto: 100087252@students.swinburne.edu.my">100087252@students.swinburne.edu.my</a></p>
+	<nav>
+		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
+		
+		<?php 
+			if (!$userLoggedIn){
+				echo "
+					<p><a href='register.php'>Register</a></p>
+					<p><a href='login.php'>Login</a></p>
+					<p><a href='index.php'>Back to home page</a></p>";
+			} else {
+				echo "
+					<p>Welcome back, " . $_SESSION['fname'] . " " . $_SESSION['lname'] . "!</p>
+					<p><a href='logout_process.php'>Logout</a></p>
+					<p><a href='update.php'>Change Account Details</a></p>
+					<p><a href='index.php'>Back to home page</a></p>";
+			}
+		?>
+	</nav>
+	<header>
+		<h1>Welcome to PC-Way</h1>
+		<p>The place for all computer & IT needs.</p>
+	</header>
+	<article>
+		<p>Student Name: Jason Ang Chia Wuen</p>
+		<p>Student ID: 100087252</p>
+		<p>Email Address: <a href="mailto: 100087252@students.swinburne.edu.my">100087252@students.swinburne.edu.my</a></p>
 	
-	<p>This website is created mainly for educational and non-commercial use only. It is a partial fulfillment for completion of unit COS30020 - Web Application Development offered in Swinburne University of Technology, Sarawak Campus for Semester 2, 2019. The web-master and author(s) do not represent the business entity. The content of the pages of this website might be outdated or inaccurate, thus, the author(s) and web-master does not take any responsibility for incorrect information disseminated or cited from this website.</p>
+		<p>This website is created mainly for educational and non-commercial use only. It is a partial fulfillment for completion of unit COS30020 - Web Application Development offered in Swinburne University of Technology, Sarawak Campus for Semester 2, 2019. The web-master and author(s) do not represent the business entity. The content of the pages of this website might be outdated or inaccurate, thus, the author(s) and web-master does not take any responsibility for incorrect information disseminated or cited from this website.</p>
+	</article>
 </body>
 </html>

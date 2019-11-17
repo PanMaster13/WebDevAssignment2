@@ -6,6 +6,14 @@
 	} else {
 		$userLoggedIn = true;
 	}
+	// Unsets reset feedback session data in password reset page
+	if (isset($_SESSION['reset_feedback'])){
+		unset($_SESSION['reset_feedback']);
+	}
+	// Unsets reset email session data to prevent users from going back to the password reset page via back button
+	if (isset($_SESSION['reset_email'])){
+		unset($_SESSION['reset_email']);
+	}
 ?>
 
 <!DOCTYPE html>
@@ -16,20 +24,25 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
-		
 		<?php 
 			if (!$userLoggedIn){
 				echo "
-					<p><a href='register.php'>Register</a></p>
-					<p><a href='login.php'>Login</a></p>";
+					<ul>
+						<li><a href='register.php'>Register</a></li>
+						<li><a href='login.php'>Login</a></li>
+					</ul>";
 					$price_multiplier = 1;
 			} else {
 				echo "
 					<p>Welcome back, " . $_SESSION['fname'] . " " . $_SESSION['lname'] . "!</p>
-					<p><a href='logout_process.php'>Logout</a></p>
-					<p><a href='update.php'>Change Account Details</a></p>";
+					<ul>
+						<li><a href='logout_process.php'>Logout</a></li>
+						<li><a href='update.php'>Change Account Details</a></li>
+					</ul>";
 					$price_multiplier = 0.5;
 			}
 		?>

@@ -45,8 +45,15 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
+		<ul>
+			<li><a href='register.php'>Register</a></li>
+			<li><a href='login.php'>Login</a></li>
+			<li><a href="index.php">Back to home page</a></li>
+		</ul>
 	</nav>
 	<header>
 		<h1>Reset Password Page</h1>
@@ -58,17 +65,17 @@
 			} else {
 				echo "<p>You can reset the password for this account " . (3 - $change_counter) . " more time(s).</p>
 				<form action='change_pass_process.php' method='post'>
-					<p>Email address (Cannot be changed): <input type='text' name='email' placeholder='$reset_email' disabled='disabled'/></p>
+					<p>Email address (Cannot be changed): <input type='text' name='email' value='$reset_email' readonly='readonly'/></p>
 					<p>New password: <input type='password' name='password'/></p>
 					<p>Confirm new password: <input type='password' name='confirm_password'></p>
-					//<input type='hidden' name='change_counter' value'$change_counter' />
+					<input type='hidden' name='change_counter' value='$change_counter' />
 					<p><input type='submit' value='Reset Password' name='reset_btn'/></p>
 				</form>";
 			}
 		?>
 		<?php echo $_SESSION['reset_feedback'];
 		?>
-		<p><a href="index.php">Back to home page</a></p>
+		<p></p>
 	</article>
 	<footer>
 		<p><a href="contact.php">Contact Us</a></p>

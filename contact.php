@@ -16,21 +16,26 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
-		
 		<?php 
 			if (!$userLoggedIn){
 				echo "
-					<p><a href='register.php'>Register</a></p>
-					<p><a href='login.php'>Login</a></p>
-					<p><a href='index.php'>Back to home page</a></p>";
+					<ul>
+						<li><a href='register.php'>Register</a></li>
+						<li><a href='login.php'>Login</a></li>
+						<li><a href='index.php'>Back to home page</a></li>
+					</ul>";
 			} else {
 				echo "
 					<p>Welcome back, " . $_SESSION['fname'] . " " . $_SESSION['lname'] . "!</p>
-					<p><a href='logout_process.php'>Logout</a></p>
-					<p><a href='update.php'>Change Account Details</a></p>
-					<p><a href='index.php'>Back to home page</a></p>";
+					<ul>
+						<li><a href='logout_process.php'>Logout</a></li>
+						<li><a href='update.php'>Change Account Details</a></li>
+						<li><a href='index.php'>Back to home page</a></li>
+					</ul>";
 			}
 		?>
 	</nav>

@@ -62,9 +62,9 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
-	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
-	</nav>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<header>
 		<h1>Account Settings Page</h1>
 	</header>

@@ -6,8 +6,14 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
+		<ul>
+			<li><a href="login.php">Login</a></li>
+			<li><a href="index.php">Back to home page</a></li>
+		</ul>
 	</nav>
 	<header>
 		<h1>Account Registration Form</h1>
@@ -22,8 +28,8 @@
 			<p><input type="reset" value="Reset form" name="reset_btn"/></p>
 			<p><input type="submit" value="Create account" name="submit_btn"/></p>
 		</form>
-		<p><a href="login.php">Login</a></p>
-		<p><a href="index.php">Back to home page</a></p>
+		<p></p>
+		<p></p>
 	</article>
 	<footer>
 		<p><a href="contact.php">Contact Us</a></p>

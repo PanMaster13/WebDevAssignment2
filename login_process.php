@@ -61,17 +61,21 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
+		<ul>
+			<li><a href="register.php">Register</a></li>
+			<li><a href="login.php">Log In to another account</a></li>
+			<li><a href="index.php">Back to home page</a></li>
+		</ul>
 	</nav>
 	<header>
 		<h1>Login Confirmation Page</h1>
 	</header>
 	<article>
 		<?php echo $feedback; ?>
-		<p><a href="register.php">Register</a></p>
-		<p><a href="login.php">Log In to another account</a></p>
-		<p><a href="index.php">Back to home page</a></p>
 	</article>
 	<footer>
 		<p><a href="contact.php">Contact Us</a></p>

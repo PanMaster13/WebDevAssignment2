@@ -6,8 +6,14 @@
 	<link rel="stylesheet" href="styles/style.css" />
 </head>
 <body>
+	<div class="logo">
+		<img src="images/logo.png" alt="Company Logo" />
+	</div>
 	<nav>
-		<div class="logo"><img src="images/logo.png" alt="Company Logo" /></div>
+		<ul>
+			<li><a href="register.php">Register another user</a></li>
+			<li><a href="index.php">Back to home page</a></li>
+		</ul>
 	</nav>
 	<header>
 		<h1>Account Login Form</h1>
@@ -20,8 +26,6 @@
 			<p><input type="submit" value="Log In" name="login_btn" /></p>
 		</form>
 	</article>
-	<p><a href="register.php">Register another user</a></p>
-	<p><a href="index.php">Back to home page</a></p>
 	<footer>
 		<p><a href="contact.php">Contact Us</a></p>
 	</footer>

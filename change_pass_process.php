@@ -19,10 +19,10 @@
 			$counter_value++;
 			
 			// Initialise database variables
-			$host = "localhost";
-			$username = "root";
-			$db_password = "";
-			$database = "pcway";
+			$host = "sql313.byethost15.com";
+			$username = "b15_24802769";
+			$db_password = "waitNhope";
+			$database = "b15_24802769_pcway";
 
 			// Create connection
 			$conn = mysqli_connect($host, $username, $db_password, $database);

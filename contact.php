@@ -38,6 +38,11 @@
 			}
 		?>
 	</nav>
+	<?php 
+		if ($userLoggedIn){
+			echo "<p>Welcome back, " . $_SESSION['fname'] . " " . $_SESSION['lname'] . "!</p>";
+		}
+		?>
 	<article class='content'>
 		<h1>Details of Web-Master</h1>
 		<p>Student Name: Jason Ang Chia Wuen</p>

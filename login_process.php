@@ -7,10 +7,10 @@
 			$feedback = "<p style='color:red'>It seems there are missing fields in the login form.<br/> Please ensure that all the fields are filled in.";
 		} else {
 			// Initialise database variables
-			$host = "localhost";
-			$username = "root";
-			$db_password = "";
-			$database = "pcway";
+			$host = "sql313.byethost15.com";
+			$username = "b15_24802769";
+			$db_password = "waitNhope";
+			$database = "b15_24802769_pcway";
 
 			// Create connection
 			$conn = mysqli_connect($host, $username, $db_password, $database);
@@ -39,7 +39,7 @@
 				} else {
 					session_start();
 					$feedback = "<p style='color:red'>Your given password does not seem to match with the password for this account.<br/> Please retype the password again slowly and ensure that CAPSLOCK is not active.</p>
-								<p><a class='forgot_pass_link' href='change_pass.php'>Forgot Password?</a></p>";
+								<p class='forgot_pass_text'><a class='forgot_pass_link' href='change_pass.php'>Forgot Password?</a></p>";
 					$_SESSION['reset_email'] = $row['email'];
 				}
 			} else {

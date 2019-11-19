@@ -34,6 +34,10 @@ input[type=submit]:active, input[type=reset]:active {
 	border: 3px solid blue;
 }
 
+.forgot_pass_text {
+    margin-top: 5%;
+}
+
 .forgot_pass_link {
 	border: 3px solid #F8F8F8;
 	background-color: #C98200;

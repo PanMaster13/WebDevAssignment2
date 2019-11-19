@@ -18,16 +18,12 @@
 	<header>
 		<h1>Account Login Form</h1>
 	</header>
-	<article>
+	<article class='content'>
 		<form action="login_process.php" method="post">
 			<p>Login Email: <input type="text" name="login_email" /></p>
 			<p>Password: <input type="password" name="password" /></p>
-			<p><input type="reset" value="Reset" />
-			<p><input type="submit" value="Log In" name="login_btn" /></p>
+			<p><input type="reset" value="Reset" /><input type="submit" value="Log In" name="login_btn" /></p>
 		</form>
 	</article>
-	<footer>
-		<p><a href="contact.php">Contact Us</a></p>
-	</footer>
 </body>
 </html>

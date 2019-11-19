@@ -65,10 +65,17 @@
 	<div class="logo">
 		<img src="images/logo.png" alt="Company Logo" />
 	</div>
+	<nav>
+		<ul>
+			<li><a href='logout_process.php'>Logout</a></li>
+			<li><a href='contact.php'>Contact Us</a></li>
+			<li><a href="index.php">Back to home page</a></li>
+		</ul>
+	</nav>
 	<header>
 		<h1>Account Settings Page</h1>
 	</header>
-	<article>
+	<article class='content'>
 		<form action="update.php" method="post">
 			<p>New first name: <input type="text" name="fname"/></p>
 			<p>New last name: <input type="text" name="lname"/></p>
@@ -78,10 +85,6 @@
 			<p><input type="submit" value="Save Account Settings" name="update_btn"/></p>
 		</form>
 		<?php echo $feedback; ?>
-		<p><a href="index.php">Back to home page</a></p>
 	</article>
-	<footer>
-		<p><a href="contact.php">Contact Us</a></p>
-	</footer>
 </body>
 </html>

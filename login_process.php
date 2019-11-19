@@ -39,7 +39,7 @@
 				} else {
 					session_start();
 					$feedback = "<p style='color:red'>Your given password does not seem to match with the password for this account.<br/> Please retype the password again slowly and ensure that CAPSLOCK is not active.</p>
-								<p><a href='change_pass.php'>Forgot Password?</a></p>";
+								<p><a class='forgot_pass_link' href='change_pass.php'>Forgot Password?</a></p>";
 					$_SESSION['reset_email'] = $row['email'];
 				}
 			} else {
@@ -74,11 +74,8 @@
 	<header>
 		<h1>Login Confirmation Page</h1>
 	</header>
-	<article>
+	<article class='content'>
 		<?php echo $feedback; ?>
 	</article>
-	<footer>
-		<p><a href="contact.php">Contact Us</a></p>
-	</footer>
 </body>
 </html>

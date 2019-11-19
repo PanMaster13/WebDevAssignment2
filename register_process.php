@@ -72,16 +72,14 @@
 			<li><a href="register.php">Register another user</a></li>
 			<li><a href="login.php">Login</a></li>
 			<li><a href="index.php">Back to home page</a></li>
+			<li><a href='contact.php'>Contact Us</a></li>
 		</ul>
 	</nav>
 	<header>
 		<h1>Account Confirmation Page</h1>
 	</header>
-	<article>
+	<article class='content'>
 		<?php echo $feedback; ?>
 	</article>
-	<footer>
-		<p><a href="contact.php">Contact Us</a></p>
-	</footer>
 </body>
 </html>

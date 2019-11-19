@@ -58,7 +58,7 @@
 	<header>
 		<h1>Reset Password Page</h1>
 	</header>
-	<article>
+	<article class='content'>
 		<?php
 			if ($change_counter == 3){
 				echo "<p>You cannot reset the password for this account anymore.";
@@ -77,8 +77,5 @@
 		?>
 		<p></p>
 	</article>
-	<footer>
-		<p><a href="contact.php">Contact Us</a></p>
-	</footer>
 </body>
 </html>

@@ -2,6 +2,55 @@
 body{
 	margin: 0;
 	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+
+.content {
+	margin: 0 20%;
+	background-color: #F8F8F8;
+	padding: 1%;
+}
+
+input {
+	margin: 1%;
+}
+
+input[type=submit], input[type=reset] {
+	border: 3px solid #F8F8F8;
+	background-color: #C98200;
+	padding: 2% 5%;
+	transition: 0.5s;
+	color: white;
+}
+
+input[type=submit]:hover, input[type=reset]:hover {
+	background-color: #F8F8F8;
+	border: 3px solid #C98200;
+	color: black;
+}
+
+input[type=submit]:active, input[type=reset]:active {
+	border: 3px solid blue;
+}
+
+.forgot_pass_link {
+	border: 3px solid #F8F8F8;
+	background-color: #C98200;
+	padding: 2% 5%;
+	transition: 0.5s;
+	color: white;
+	text-decoration: none;
+}
+
+.forgot_pass_link:hover {
+	background-color: #F8F8F8;
+	border: 3px solid #C98200;
+	color: black;
+}
+
+.forgot_pass_link:active {
+	border: 3px solid blue;
 }
 
 /* Navigation Bar */
@@ -21,38 +70,47 @@ nav ul li a {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	transition: 0.5s;
 }
 
 nav ul li a:hover {
-	background-color: #111;
+	background-color: #F8F8F8;
+	color: black;
 }
 
-/* Footer */
-footer{
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #C98200;
-	color: white;
-	text-align: center;
-}
-
-footer a{
-	color: white;
-	text-decoration: none;
-}
 /* Home Page (Index) */
 .logo img{
 	width: 20%;
 }
 
 #product-box{
-	display: grid;
-	grid-template-columns: auto auto;
+	display: inline-grid;
+	grid-template-columns: 45% 45%;
+	grid-gap: 5%;
+	justify-content: center;
+}
+
+.product-item {
+	display: flex;
+	border: 3px solid #F8F8F8;
+	color: white;
+	justify-content: center;
+	background-color: #C98200;
+	transition: 0.5s;
+	padding: 1%;
+}
+
+.product-item:hover {
+	background-color: #F8F8F8;
+	border: 3px solid #C98200;
+	color: black;
+}
+
+.product-item:active {
+	border: 3px solid blue;
 }
 
 .product-item img{
-	width: 20%;
+	width: 30%;
 }
 

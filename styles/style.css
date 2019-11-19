@@ -1,22 +1,14 @@
-/* Home Page (Index) */
-.logo img{
-	width: 20%;
-}
-
-#product-box{
-	display: grid;
-	grid-template-columns: auto auto;
-}
-
-.product-item img{
-	width: 20%;
+/* All pages */
+body{
+	margin: 0;
+	padding: 0;
 }
 
 /* Navigation Bar */
 nav ul{
 	list-style-type: none;
 	overflow: hidden;
-	background-color: #333;
+	background-color: #C98200;
 }
 
 nav ul li {
@@ -34,3 +26,33 @@ nav ul li a {
 nav ul li a:hover {
 	background-color: #111;
 }
+
+/* Footer */
+footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #C98200;
+	color: white;
+	text-align: center;
+}
+
+footer a{
+	color: white;
+	text-decoration: none;
+}
+/* Home Page (Index) */
+.logo img{
+	width: 20%;
+}
+
+#product-box{
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+.product-item img{
+	width: 20%;
+}
+
